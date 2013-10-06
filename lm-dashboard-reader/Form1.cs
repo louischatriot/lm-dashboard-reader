@@ -32,6 +32,11 @@ namespace lm_dashboard_reader
         {
             Console.WriteLine("Bloupibloup");
 
+            UsbRegDeviceList allDevices = new UsbRegDeviceList();
+            allDevices.FindAll(new UsbDeviceFinder(new Guid("4d36e96f-e325-11ce-bfc1-08002be10318")));
+            Console.WriteLine(allDevices.Count());
+
+            /*
             // Dump all devices and descriptor information to console output.
             UsbRegDeviceList allDevices = UsbDevice.AllDevices;
 
@@ -67,6 +72,7 @@ namespace lm_dashboard_reader
             // Free usb resources.
             // This is necessary for libusb-1.0 and Linux compatibility.
             UsbDevice.Exit();
+            */
 
             label1.Text = "Salut";
         }
